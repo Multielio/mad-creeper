@@ -16,10 +16,10 @@ public class Takedamage implements Listener {
     @EventHandler
     public void taked(EntityDamageByEntityEvent e) {
         if(!(e.getEntity() instanceof Player))return;
-        if((!(e.getDamager() instanceof Creeper)) && (!( e.getCause() ==EntityDamageEvent.DamageCause.ENTITY_EXPLOSION)))return;
+        if((!(e.getDamager() instanceof Creeper)) && (!( e.getCause() == EntityDamageEvent.DamageCause.ENTITY_EXPLOSION)))return;
         e.setCancelled(true);
         Player p = (Player) e.getEntity();
-        p.damage(40);
+        p.setHealth(0);
         p.sendMessage("§c You have been instant kill by a creeper !");
     }
 

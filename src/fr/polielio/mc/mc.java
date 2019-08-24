@@ -9,6 +9,7 @@ public class mc extends JavaPlugin {
     public void onEnable() {
         PluginManager pm = Bukkit.getServer().getPluginManager();
         pm.registerEvents(new Takedamage(), this);
+        MetricsLite metrics = new MetricsLite(this);
     }
     @Override
     public void onDisable(){
